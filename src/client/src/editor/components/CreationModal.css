@@ -1,0 +1,35 @@
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    >.buttonsContainer {
+        width: 225px;
+        display: flex;
+        justify-content: center;
+
+        /* If cancel button is there we want space between both buttons*/
+        &:has(:nth-child(2)) {
+            justify-content: space-between;
+        }
+
+        >button {
+            margin-top: 10px;
+            width: 100px;
+        }
+    }
+
+    >input[type="text"] {
+        background-color: transparent;
+        color: white;
+    }
+}

@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  >button:first-child {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+button {
+  background: #663399;
+  border-radius: 1000px;
+  box-shadow: #663399 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 8px 16px;
+  border: 0;
+
+  &:hover {
+    background: #7e4ab0;
+  }
+}
+
+input[type=text] {
+  width: 250px;
+  border: 0;
+  border-bottom: 2px solid grey;
+  outline: 0;
+  font-size: large;
+
+  &:focus {
+    border-width: 3px;
+    border-image: linear-gradient(to right, #663399, #4ca8cf);
+    border-image-slice: 1;
+  }
+}
