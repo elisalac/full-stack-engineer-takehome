@@ -1,6 +1,6 @@
 # Overview
 
-In this app, you will be able to create a user and log in. Once logged in, you can manage your documents (create, edit, delete). When changing the title of a document, you do not need to press the save button, as it saves automatically. However, if you edit the content of the document, you will need to press the save button.
+In this app, you will be able to create a user and log in. Once logged in, you can manage documents (create, edit, delete). When changing the title of a document, you do not need to press the save button, as it saves automatically. However, if you edit the content of the document, you will need to press the save button.
 
 # Setup Instructions
 
@@ -61,6 +61,7 @@ In this app, you will be able to create a user and log in. Once logged in, you c
 - Unique document management per user.
 - Adding unit tests for the backend and E2E tests for the frontend.
 - Adding a page to edit the user profile.
+- Modifying the sidebar to allow it to collapse and resize.
 
 # Faced Challenges
 
