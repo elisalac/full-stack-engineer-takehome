@@ -1,88 +1,71 @@
-# Structure
+# Overview
 
-- We are setting the barebones for the socket server for you and the structure looks like this:
+In this app, you will be able to create a user and log in. Once logged in, you can manage your documents (create, edit, delete). When changing the title of a document, you do not need to press the save button, as it saves automatically. However, if you edit the content of the document, you will need to press the save button.
 
-  - **index.ts** is what initialize the project; It contains the instantiation of the http server as well as the call for the socket server instantiation;
-  - **SocketServer.ts** is what instantiate the socket server and set one listener for whenever a connection starts; We are setting it up using socket.io(https://socket.io/docs/v4/);
-  - **tests** you can keep your tests in here;
-  - **src** you can keep your source code files in here.
----
-**Feel free to change whatever you see fit** in the project, the structure and the way the code were written are not set on stone and were just added to help lead you straight on solving the challenge.
+# Setup Instructions
 
-# Instructions
+## Installation 
 
-***Objective:***
-Build a simplified real-time collaborative note-taking application that allows multiple users to edit a note simultaneously with live updates.
+- You need to run **npm i** in the root of the project and also at **/src/client**.
+- PHP must be installed on your machine.
 
-***Expect development time:***  2 hours
+## Starting the Servers
 
-**Project Description:**
+1. First, run the following command:  
+   `C:\php\php.exe -S localhost:3000`
+   (Path for php.exe might differ depending on where PHP was installed)
+   
+2. In another terminal, run:  
+   `npm start`  
+   Answer **y** when asked: *Would you like to run the app on another port instead?*
 
-Create a web application where users can:
+3. In a third terminal, run:  
+   `npx nodemon`  
+   Answer **y** when asked again: *Would you like to run the app on another port instead?*
 
-- Create an Edit Notes:
+# Technology Stack
 
-  - Utilize a WYSIWYG editor to format text (e.g., bold, italic, underline).
+**Backend:**
+- Language: PHP, Node.js
+- Framework: Express
 
-  - Implement live preview of the formatted text.
+**Frontend:**
+- Languages: React, TypeScript
+- Libraries & Tools:
+    - UI & Styling: Material UI, React Icons
+    - State Management: Redux, React-Redux
+    - Text Editors: Quill.js
+    - Utilities: Lodash
+    - Sockets: Socket.io
+    - React Tools: React-dom, React-router-dom, React-scripts
 
-- Real-Time Collaboration
+**Development Tools:**
+- Node.js Tools: Nodemon
 
-  - Use WebSockets to handle live updates and data synchronization.
+# Features Implemented
 
-- Basic Backend Integration:
+**User Authentication**
+- Login and logout functionality with validation during login.
+- User registration and account creation.
 
-  - Implement basic user authentication to manage different user sessions.
+**Document Management**
+- Create new documents with unique IDs and custom names.
+- Edit documents with rich text formatting (using Quill.js).
+- Save and retrieve document content from the backend server.
 
-**Technical Requirements:**
-- Frontend:
+**State Management**
+- Efficient state management using Redux to handle user data, documents, and session states.
 
-  - Framework: React with TypeScript
+# Future Improvements
 
-  - Suggested WYSIWYG Editor packages 
-    - CKEditor5
-    - Froala
-    - TipTap
-    - QuillJS
-    - or your own choice.
+- Unique document management per user.
+- Adding unit tests for the backend and E2E tests for the frontend.
+- Adding a page to edit the user profile.
 
-  - State management other than local states
+# Faced Challenges
 
-  - Real-Time Updates: Integrate WebSocket
-    
-  - Bonus: Create a modal to appear when the WebSocket connection is disconnected.
-
-- Backend:
-
-  - Language: Node.js with Express or PHP (based on your stack)
-
-  - Real-Time Communication: Set up WebSocket server to broadcast updates to connected clients
-
-- Database:
-
-  - Use an in-memory data store (like a simple JavaScript object) for simplicity, given the time constraint.
-
-**Submission Guidelines:**
-- Repository:
-
-  - Create a public GitHub repository containing your code.
-
-  - Ensure clear commit messages and a logical commit history.
-
-- README File:
-
-  - Project Overview: Brief description of the project.
-
-  - Setup Instructions: Step-by-step guide to run the application locally.
-
-  - Technology Stack: List the technologies and libraries used.
-
-  - Features Implemented: Highlight the key features you’ve built.
-
-  - Future Improvements: Mention any additional features or improvements you would implement given more time.
-
-- Running the Project:
-
-  - Provide clear instructions to install dependencies and start both frontend and backend servers.
-
-  - Ensure that the application runs without issues.
+During this project, I faced multiple challenges, such as:
+- Starting the frontend project.
+- Relearning how to code in PHP.
+- Connecting the frontend and backend.
+- Data not refreshing correctly, requiring a forced page reload.
