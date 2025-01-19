@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import documentsSlice from "./editor/slice.ts"
+import documentsSlice from "./editor/slice.ts";
+import usersSlice from "./user/slice.ts";
 
 export const store = configureStore({
     reducer: {
-        [documentsSlice.reducerPath]: documentsSlice.reducer
+        [documentsSlice.reducerPath]: documentsSlice.reducer,
+        [usersSlice.reducerPath]: usersSlice.reducer
     },
 });
 

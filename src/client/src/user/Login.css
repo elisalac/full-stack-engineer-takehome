@@ -1,0 +1,12 @@
+.container {
+    >.error {
+        color: red;
+        font-size: 20;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    >input {
+        margin-bottom: 20px;
+    }
+}

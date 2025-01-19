@@ -5,7 +5,7 @@
     height: 100%;
     justify-content: end;
 
-    >.buttonsContainer {
+    >.buttonsContainerHeader {
         width: 100%;
         display: flex;
         justify-content: end;
@@ -38,5 +38,12 @@
                 color: grey;
             }
         }
+    }
+
+    >.buttonsContainerFooter {
+        height: calc(90% - 20px);
+        display: flex;
+        align-items: end;
+        justify-content: end;
     }
 }

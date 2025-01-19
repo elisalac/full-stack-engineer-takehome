@@ -4,7 +4,7 @@ import slice from "./slice.ts";
 export const createDocument = async (name: string) => {
     console.log(JSON.stringify({ name }));
     try {
-        const response = await fetch("http://localhost:3000/src/server/editor/api.php", {
+        const response = await fetch("http://localhost:3000/src/server/editor/documents.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const createDocument = async (name: string) => {
 
 export const editDocument = async ({ data, name, id }: Partial<IDocument>) => {
     try {
-        await fetch('http://localhost:3000/src/server/editor/api.php', {
+        await fetch('http://localhost:3000/src/server/editor/documents.php', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const editDocument = async ({ data, name, id }: Partial<IDocument>) => {
 
 export const deleteDocument = async (id: string) => {
     try {
-        const response = await fetch("http://localhost:3000/src/server/editor/api.php", {
+        const response = await fetch("http://localhost:3000/src/server/editor/documents.php", {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export const deleteDocument = async (id: string) => {
 
 export const getAllDocuments = async () => {
     try {
-        const response = await fetch("http://localhost:3000/src/server/editor/api.php?get_all=true", {
+        const response = await fetch("http://localhost:3000/src/server/editor/documents.php?get_all=true", {
             method: 'GET',
         });
 

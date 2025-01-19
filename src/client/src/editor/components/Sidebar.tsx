@@ -10,6 +10,7 @@ import "./Sidebar.css"
 import { deleteDocument } from "../requests.ts";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store.ts";
+import { logout } from "../../user/requests.ts";
 
 interface ISidebar {
     documents: IDocuments;
@@ -28,9 +29,14 @@ export default React.memo(({ documents, setModalOpen }: ISidebar) => {
         setModalOpen(true);
     }, [setModalOpen]);
 
+    const onLogout = React.useCallback(async () => {
+        await logout();
+        nav("/");
+    }, [nav])
+
     return (
         <div className="sidebar">
-            <div className="buttonsContainer">
+            <div className="buttonsContainerHeader">
                 <FaPlus onClick={onCreate} className="addButtonIcon" />
             </div>
             <SimpleTreeView onItemClick={onItemClick} selectedItems={id}>
@@ -47,6 +53,9 @@ export default React.memo(({ documents, setModalOpen }: ISidebar) => {
                     />
                 ))}
             </SimpleTreeView>
+            <div className="buttonsContainerFooter">
+                <button onClick={onLogout}>Log out</button>
+            </div>
         </div>
     );
 });
